@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e632104c6a7d654e8b3241ab2ab644e, type: 3}
+  m_Name: BigFoot
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureData
+  creatureName: Big Foot
+  habitatDescription: "Florestas de pinheiros, montanhas, vales e cavernas de dif\xEDcil
+    acesso na Am\xE9rica do Norte. Evita \xE1reas abertas, estradas e cidades."
+  behaviorDescription: "Extremamente t\xEDmido e territorial. Observa \xE0 dist\xE2ncia
+    e evita confronto direto, mas intimida (batidas em \xE1rvores, gritos, arremesso
+    de galhos/pedras) quando se sente invadido.\t"
+  styleMonster: "Rastreamento e persegui\xE7\xE3o silenciosa: o jogador segue pistas
+    f\xEDsicas tentando alcan\xE7ar uma criatura que ativamente evita ser vista."
+  agressivenessLevel: 2
+  possibleEvidences: 000000000100000002000000
+  suggestedTrap: 0
+  weaknessOrBait: "Fogo e barulho intenso o afastam. N\xE3o h\xE1 fraqueza letal
+    conhecida \u2014 a ca\xE7ada \xE9 sobre rastreamento, n\xE3o confronto direto."
+  uniqueMechanicNotes: "IA adaptativa: quanto mais \xE9 investigado, menos evid\xEAncias
+    deixa. Muda de rota, evita c\xE2meras j\xE1 identificadas, e passa por pedras/riachos
+    para sumir com o rastro."
+  folkloreNotes: "Tradi\xE7\xF5es ind\xEDgenas o tratam como esquivo e misterioso,
+    n\xE3o como monstro assassino. O suspense de \"sentir que est\xE1 sendo observado\"
+    \xE9 mais fiel do que um confronto direto."

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e632104c6a7d654e8b3241ab2ab644e, type: 3}
+  m_Name: Mapinguari
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureData
+  creatureName: Mapinguari
+  habitatDescription: "Floresta Amaz\xF4nica densa (Brasil, Peru, Bol\xEDvia), sempre
+    em \xE1reas remotas.\t"
+  behaviorDescription: "Muito territorial. Evita pessoas, mas pode atacar se provocado,
+    encurralado ou se sua \xE1rea for invadida. Anda lentamente e faz muito barulho,
+    destruindo vegeta\xE7\xE3o ao se mover."
+  styleMonster: "For\xE7a bruta e rastros na floresta: o jogador raramente precisa
+    de furtividade, mas sim entender e navegar o rastro de destrui\xE7\xE3o que ele
+    deixa."
+  agressivenessLevel: 3
+  possibleEvidences: 000000000100000002000000
+  suggestedTrap: 2
+  weaknessOrBait: "Sem consenso no folclore. Sugerimos fogo ou evitar \xE1reas abertas;
+    na vers\xE3o on\xEDvora, frutas parcialmente comidas podem servir de isca tem\xE1tica."
+  uniqueMechanicNotes: "Pegadas invertidas: o rastro aponta na dire\xE7\xE3o errada,
+    e s\xF3 detalhes (profundidade, dire\xE7\xE3o dos galhos empurrados) revelam
+    o sentido real. Ele tamb\xE9m modifica o ambiente permanentemente por onde passa
+    (\xE1rvores ca\xEDdas, clareiras, trilhas largas)."
+  folkloreNotes: "N\xE3o h\xE1 descri\xE7\xE3o \xFAnica entre os povos amaz\xF4nicos
+    \u2014 liberdade criativa \xE9 aceit\xE1vel, desde que preserve o porte colossal,
+    a for\xE7a, o cheiro intenso e, se desejado, a boca no peito e as pegadas invertidas."

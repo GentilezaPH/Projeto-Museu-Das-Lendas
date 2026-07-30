@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e632104c6a7d654e8b3241ab2ab644e, type: 3}
+  m_Name: Mothman
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureData
+  creatureName: Mothman
+  habitatDescription: "\xC1reas industriais abandonadas, florestas, p\xE2ntanos e
+    regi\xF5es pr\xF3ximas a rios e pontes. Quase sempre \xE0 noite."
+  behaviorDescription: "Extremamente misterioso. Quase nunca ataca \u2014 prefere
+    observar de longe (postes, telhados, torres) e desaparecer rapidamente."
+  styleMonster: "Fen\xF4menos estranhos e observa\xE7\xE3o: o jogo nunca confirma
+    se ele causa ou apenas precede eventos ruins, preservando a ambiguidade da lenda."
+  agressivenessLevel: 1
+  possibleEvidences: 020000000400000008000000
+  suggestedTrap: 4
+  weaknessOrBait: "Nenhuma conhecida. Sugerimos que ele s\xF3 \"permita\" ser fotografado
+    sob condi\xE7\xF5es ambientais espec\xEDficas (sil\xEAncio, escurid\xE3o total),
+    nunca sendo capturado de forma convencional."
+  uniqueMechanicNotes: "Sua presen\xE7a desencadeia eventos de press\xE1gio aleat\xF3rios
+    no mapa (queda de \xE1rvore, desabamento, apag\xE3o, tempestade), for\xE7ando
+    o jogador a reagir a crises sem nunca confirmar se ele as causa."
+  folkloreNotes: "A lenda n\xE3o o descreve como perseguidor ou assassino. O fasc\xEDnio
+    est\xE1 na d\xFAvida entre mensageiro e causador \u2014 essa ambiguidade deve
+    ser preservada no design."
