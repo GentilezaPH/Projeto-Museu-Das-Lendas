@@ -61,10 +61,16 @@ public class CreatureController : MonoBehaviour
         }
     }
 
+    /*  bloco de controle de Parado do Mob  */
+
     private void HandleIdleState()
     {
 
     }
+
+
+    /*  bloco de controle de VAGANDO do Mob  */
+
 
     [SerializeField]
     private float wanderSpeed = 2f;
@@ -88,7 +94,45 @@ public class CreatureController : MonoBehaviour
 
     private void PickNewWanderTarget()
     {
-        
+        Vector2 randomCircle = Random.insideUnitCircle * wanderRadius;
+        wanderTarget = transform.position + new Vector3(randomCircle.x, Of, randomCircle.y);
+
     }
 
+
+
+    /*  bloco de controle de Investigando do Mob  */
+
+
+    [SerializeField]
+    private float investigateSpeed = 3f;
+
+    [SerializeField]
+    private float detectionRadius = 15f;
+
+    private Vector3 investigationPoint;
+
+
+    private void HandleInvestigatingState()
+    {
+        float distanceToPoint = Vector3.Distance(transform.position, investigationPoint);
+
+        transform.position = Vector3.MoveTowards(transform.position, investigationPoint, investigateSpeed * Time.deltaTime);
+
+
+        if (distanceToPoint < 0.5f)
+        {
+            currentState = CreatureState.Wandering;
+        }
+
+        if (playerTransform != null && Vector3.Distance(transform.position, playerTransform.position) < huntRadius)
+        {
+            currentState = CreatureState.Hunting;
+        }
+    }
+
+
 }
+
+
+
