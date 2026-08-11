@@ -90,12 +90,18 @@ public class CreatureController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, wanderTarget, wanderSpeed * Time.deltaTime);
         
-    }
+        if (playerTransform != null && Vector3.Distance(transform.position, playerTransform.position) < huntRadius)
+        {
+            currentState = CreatureState.Hunting;
+        }
+    } 
+
+
 
     private void PickNewWanderTarget()
     {
         Vector2 randomCircle = Random.insideUnitCircle * wanderRadius;
-        wanderTarget = transform.position + new Vector3(randomCircle.x, Of, randomCircle.y);
+        wanderTarget = transform.position + new Vector3(randomCircle.x, 0f, randomCircle.y);
 
     }
 
@@ -110,6 +116,7 @@ public class CreatureController : MonoBehaviour
     [SerializeField]
     private float detectionRadius = 15f;
 
+    [SerializeField]
     private Vector3 investigationPoint;
 
 
@@ -132,7 +139,39 @@ public class CreatureController : MonoBehaviour
     }
 
 
+    /*  bloco de controle de Investigando do Mob  */
+
+    [SerializeField]
+    private float huntSpeed = 5f;
+
+    [SerializeField]
+    private float huntRadius = 8f;
+
+    private void HandleHuntingState()
+    {
+        if (playerTransform == null)
+        {
+            currentState = CreatureState.Wandering;
+            return;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, huntSpeed * Time.deltaTime);
+
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        if (distanceToPlayer > detectionRadius)
+        {
+            currentState = CreatureState.Wandering;
+            PickNewWanderTarget();
+        }
+    }
+
+
+    private void HandleRetreatingState()
+    {
+        
+    }
 }
+
 
 
 
