@@ -63,9 +63,21 @@ public class CreatureController : MonoBehaviour
 
     /*  bloco de controle de Parado do Mob  */
 
+
+    [SerializeField]
+    private float idleDuration = 2f;
+    private float idleTimer;
+
     private void HandleIdleState()
     {
+        idleTimer += Time.deltaTime;
 
+        if (idleTimer >= idleDuration)
+        {
+        currentState = CreatureState.Wandering;
+        idleTimer = 0f;
+        PickNewWanderTarget();
+    }
     }
 
 
@@ -164,6 +176,9 @@ public class CreatureController : MonoBehaviour
             PickNewWanderTarget();
         }
     }
+
+
+
     /*  bloco de controle de Fuga do Mob  */
 
 
