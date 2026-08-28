@@ -139,7 +139,7 @@ public class CreatureController : MonoBehaviour
     }
 
 
-    /*  bloco de controle de Investigando do Mob  */
+    /*  bloco de controle de Caçando do Mob  */
 
     [SerializeField]
     private float huntSpeed = 5f;
@@ -164,11 +164,40 @@ public class CreatureController : MonoBehaviour
             PickNewWanderTarget();
         }
     }
+    /*  bloco de controle de Fuga do Mob  */
+
+
+    [SerializeField]
+    private float retreatSpeed = 4f;
+
+    [SerializeField]
+    private float retreatDistance = 10f;
+
+    [SerializeField]
+    private float safeDistance = 12f;
+
 
 
     private void HandleRetreatingState()
     {
-        
+        if (playerTransform == null)
+    {
+        currentState = CreatureState.Wandering;
+        PickNewWanderTarget();
+        return;
+    }
+
+    Vector3 fleeDirection = (transform.position - playerTransform.position).normalized;
+    Vector3 fleeTarget = transform.position + fleeDirection * retreatDistance;
+
+    transform.position = Vector3.MoveTowards(transform.position, fleeTarget, retreatSpeed * Time.deltaTime);
+
+    float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+    if (distanceToPlayer > safeDistance)
+    {
+        currentState = CreatureState.Wandering;
+        PickNewWanderTarget();
+    }
     }
 }
 
