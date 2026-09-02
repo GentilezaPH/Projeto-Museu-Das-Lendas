@@ -15,6 +15,9 @@ public class EvidenceTool : MonoBehaviour
     [SerializeField]
     private InputActionReference useAction;
 
+    [SerializeField]
+    private EvidenceTracker evidenceTracker;
+
     private void OnEnable()
     {
         useAction.action.Enable();
@@ -34,25 +37,33 @@ public class EvidenceTool : MonoBehaviour
 
     private void TryDetectEvidence()
     {
-        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-        RaycastHit hit;
+    Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+    RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, detectionRange))
+    if (Physics.Raycast(ray, out hit, detectionRange))
+    {
+        CreatureController creature = hit.collider.GetComponent<CreatureController>();
+
+        if (creature != null && creature.Data != null)
         {
-            CreatureController creature = hit.collider.GetComponent<CreatureController>();
-
-            if (creature != null)
+            if (creature.Data.possibleEvidences.Contains(toolEvidenceType))
             {
-                Debug.Log($"Raio acertou uma criatura: {creature.gameObject.name}");
+             Debug.Log($"Evidência confirmada: {toolEvidenceType} em {creature.Data.creatureName}");
+             evidenceTracker.AddEvidence(toolEvidenceType);
             }
             else
             {
-                Debug.Log("Raio acertou algo, mas não é uma criatura.");
+                Debug.Log($"Essa ferramenta não detecta esse tipo de evidência em {creature.Data.creatureName}");
             }
         }
         else
         {
-            Debug.Log("Nada detectado no alcance.");
+            Debug.Log("Raio acertou algo, mas não é uma criatura.");
         }
+    }
+    else
+    {
+        Debug.Log("Nada detectado no alcance.");
+    }
     }
 }

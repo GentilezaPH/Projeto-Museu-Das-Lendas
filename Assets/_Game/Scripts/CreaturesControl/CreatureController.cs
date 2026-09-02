@@ -4,6 +4,7 @@ public class CreatureController : MonoBehaviour
 {
     [SerializeField]
     private CreatureData data;
+    public CreatureData Data => data;
 
     [SerializeField]
     private CreatureState currentState = CreatureState.Idle;
