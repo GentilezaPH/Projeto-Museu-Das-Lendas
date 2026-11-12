@@ -35,5 +35,5 @@ O código foi estruturado de forma modular para facilitar a manutenção e a esc
 ---
 
 ## 👨‍💻 Autor
-Desenvolvido por **Pedro Gentil** — Estudante de Engenharia da Computação (UEMG), **Eduardo Garcia** - Estudante de Ciência da Computação (UNIP), **Gabriel Monteiro** - Estudante de Engenharia da Computação (UNAERP)
-[LinkedIn](https://linkedin.com/in/gentilpedro) | [GitHub](https://github.com/GentilezaPH)
+Desenvolvido por **Pedro Gentil** — Estudante de Engenharia da Computação (UEMG) [LinkedIn](https://linkedin.com/in/gentilpedro) | [GitHub](https://github.com/GentilezaPH)
+, **Eduardo Garcia** - Estudante de Ciência da Computação (UNIP), **Gabriel Monteiro** - Estudante de Engenharia da Computação (UNAERP)
